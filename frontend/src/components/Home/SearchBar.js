@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import agent from "../../agent";
-import {
-  APPLY_SEARCH_FILTER
-} from "../../constants/actionTypes";
+import { APPLY_SEARCH_FILTER } from "../../constants/actionTypes";
 import { connect } from "react-redux";
 
 const mapStateToProps = (state) => ({
@@ -16,7 +14,6 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const SearchBar = (props) => {
-
   const searchItems = (searchValue) => {
     if (searchValue.length > 2) {
       props.onSearchInput(
@@ -24,7 +21,7 @@ const SearchBar = (props) => {
         (page) => agent.Items.byTitle(searchValue, page),
         agent.Items.byTitle(searchValue)
       );
-    }else{
+    } else {
       props.onSearchInput(
         searchValue,
         (page) => agent.Items.all(page),
