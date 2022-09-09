@@ -39,6 +39,7 @@ const SearchBar = (props) => {
         type="search"
         className="form-control py-2 border-right-0 border"
         onChange={(e) => searchItems(e.target.value)}
+        id="search-box"
       />
       <span className="input-group-append">
         <div className="input-group-text bg-white">
